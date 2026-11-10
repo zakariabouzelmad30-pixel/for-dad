@@ -1,0 +1,261 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>إلى أبي الغالي ❤️</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Cairo', sans-serif;
+    background: #f5eadb;
+    color: #624735;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+    text-align: center;
+}
+
+.card {
+    background: rgba(255,255,255,0.65);
+    max-width: 650px;
+    width: 100%;
+    padding: 45px 30px;
+    border: 1px solid #dfc7aa;
+    border-radius: 28px;
+    box-shadow: 0 15px 50px rgba(91,60,35,0.12);
+    animation: appear 1.2s ease;
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(35px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.heart {
+    font-size: 55px;
+    animation: heartbeat 1.5s infinite;
+    margin-bottom: 15px;
+}
+
+@keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.15); }
+}
+
+h1 {
+    font-size: 35px;
+    margin-bottom: 15px;
+    color: #765237;
+}
+
+.subtitle {
+    font-size: 17px;
+    line-height: 2;
+    color: #92765d;
+    margin-bottom: 30px;
+}
+
+button {
+    background: #8b6447;
+    color: white;
+    border: none;
+    padding: 14px 35px;
+    border-radius: 50px;
+    font-family: inherit;
+    font-size: 17px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #63452f;
+    transform: translateY(-3px);
+}
+
+.message {
+    display: none;
+    margin-top: 30px;
+    padding: 25px;
+    background: #f8eddf;
+    border-radius: 20px;
+    border: 1px solid #e5d1b9;
+    line-height: 2.3;
+    animation: appear 1s ease;
+}
+
+.message h2 {
+    color: #80583b;
+    margin-bottom: 15px;
+}
+
+.message p {
+    font-size: 16px;
+}
+
+.signature {
+    margin-top: 20px;
+    font-weight: bold;
+    color: #986d49;
+    font-size: 18px;
+}
+
+.footer {
+    margin-top: 30px;
+    font-size: 13px;
+    color: #a58b71;
+}
+
+.floating {
+    position: fixed;
+    bottom: -30px;
+    font-size: 22px;
+    pointer-events: none;
+    animation: floatUp 7s linear forwards;
+    opacity: 0.6;
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+    20% { opacity: 0.7; }
+    100% {
+        transform: translateY(-110vh) rotate(40deg);
+        opacity: 0;
+    }
+}
+
+@media(max-width: 500px) {
+    h1 { font-size: 27px; }
+    .card { padding: 35px 20px; }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <div class="card">
+
+        <div class="heart">🤎</div>
+
+        <h1>إلى أبي الغالي</h1>
+
+        <p class="subtitle">
+            هناك أشخاص يجعلون الحياة أجمل بمجرد وجودهم...
+            وأنت يا أبي أحد أجمل نعم حياتي.
+            <br>
+            لدي لك مفاجأة صغيرة ❤️
+        </p>
+
+        <button id="openBtn" onclick="openMessage()">
+            افتح مفاجأتك ✨
+        </button>
+
+        <div class="message" id="message">
+
+            <h2>أبي الحبيب ❤️</h2>
+
+            <p>
+                ربما لا أقولها لك كثيراً، لكنني أريدك أن تعرف
+                أنك شخص عظيم في حياتي.
+                <br><br>
+
+                شكراً على كل شيء تفعله من أجلي،
+                على تعبك، وعلى نصائحك، وعلى كل لحظة
+                كنت فيها سنداً لي.
+                <br><br>
+
+                أتمنى أن تبقى دائماً بصحة وعافية،
+                وأن أراك سعيداً ومبتسماً في كل أيامك.
+                <br><br>
+
+                لا أحتاج إلى مناسبة لكي أخبرك
+                كم أنا محظوظ لأنك أبي.
+            </p>
+
+            <div class="signature">
+                أحبك يا أبي، الله يخليك ليا 🤎
+            </div>
+
+        </div>
+
+        <div class="footer">
+            صُنعت بكل الحب، خصيصاً لك يا أبي
+        </div>
+
+    </div>
+</div>
+
+<script>
+
+function openMessage() {
+    const message = document.getElementById("message");
+    const button = document.getElementById("openBtn");
+
+    message.style.display = "block";
+    button.style.display = "none";
+
+    message.scrollIntoView({
+        behavior: "smooth",
+        block: "center"
+    });
+
+    createHearts();
+}
+
+function createHearts() {
+    const symbols = ["🤎", "✨", "❤️", "🤍"];
+
+    for (let i = 0; i < 25; i++) {
+
+        setTimeout(() => {
+
+            const heart = document.createElement("div");
+
+            heart.className = "floating";
+            heart.innerHTML =
+                symbols[Math.floor(Math.random() * symbols.length)];
+
+            heart.style.left = Math.random() * 100 + "vw";
+            heart.style.animationDuration =
+                (5 + Math.random() * 4) + "s";
+
+            document.body.appendChild(heart);
+
+            setTimeout(() => {
+                heart.remove();
+            }, 9000);
+
+        }, i * 150);
+    }
+}
+
+</script>
+
+</body>
+</html>
